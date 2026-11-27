@@ -240,7 +240,9 @@ function addon:InitOptions()
     panel:SetScript("OnDragStart", panel.StartMoving)
     panel:SetScript("OnDragStop", panel.StopMovingOrSizing)
     panel:SetScript("OnHide", function()
-        soundList:Hide()
+        if soundList then
+            soundList:Hide()
+        end
         if addon.unlocked then
             addon:SetAlertUnlocked(false)
         end

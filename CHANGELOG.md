@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- fix: fixed a load error ("attempt to index upvalue 'soundList'") when the options window was initialized
 - chore: renamed everything from "Bears Low Arrow" to "Bears Low Arrows". The SavedVariables table is now `BearsLowArrowsDB` (was `BearsLowArrowDB`), so settings saved under the old name are not carried over. Frame names, the minimap button, the options window, the slash command globals, the TOC title, and the release project name use the new name. Slash commands `/arrows` and `/bla` are unchanged.
 - chore: project source repository moved to https://github.com/N6REJ/Bears-Low-Arrows (README link updated)
 - chore: packaged addon folder is now `Bears_Low_Arrows` (`package-as` in `.pkgmeta`), matching the TOC filename
