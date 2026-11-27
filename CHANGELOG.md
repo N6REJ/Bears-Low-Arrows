@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- fix: "Test alert" and "Flash text" now stay up for the selected alert duration. The periodic check was hiding them within a few seconds when ammo was above the threshold.
+- fix: "Test sound" now falls back to the default raid warning sound if the selected sound file can't be played, and reports the failure in chat if no fallback is available.
 - fix: fixed a load error ("attempt to index upvalue 'soundList'") when the options window was initialized
 - chore: renamed everything from "Bears Low Arrow" to "Bears Low Arrows". The SavedVariables table is now `BearsLowArrowsDB` (was `BearsLowArrowDB`), so settings saved under the old name are not carried over. Frame names, the minimap button, the options window, the slash command globals, the TOC title, and the release project name use the new name. Slash commands `/arrows` and `/bla` are unchanged.
 - chore: project source repository moved to https://github.com/N6REJ/Bears-Low-Arrows (README link updated)

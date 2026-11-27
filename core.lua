@@ -145,7 +145,7 @@ function addon:Check()
         if not self.cycleTimer then
             self:Remind()
         end
-    else
+    elseif self.cycleTimer then
         self:StopReminders()
     end
 end
@@ -154,19 +154,13 @@ function addon:Remind()
     if self.cycleTimer then
         self.cycleTimer:Cancel()
     end
-    if self.hideTimer then
-        self.hideTimer:Cancel()
-    end
     if not self:IsLow() then
         self:StopReminders()
         return
     end
-    self:ShowAlert()
+    self:ShowAlertFor(self.db.duration)
     self:PlayAlertSound()
     local db = self.db
-    self.hideTimer = C_Timer.NewTimer(db.duration, function()
-        self:HideAlert()
-    end)
     self.cycleTimer = C_Timer.NewTimer(db.duration + db.delay, function()
         self:Remind()
     end)
@@ -185,11 +179,8 @@ function addon:StopReminders()
 end
 
 function addon:Test()
-    self:ShowAlert()
+    self:ShowAlertFor(self.db.duration)
     self:PlayAlertSound()
-    C_Timer.After(self.db.duration, function()
-        self:HideAlert()
-    end)
 end
 
 frame:RegisterEvent("ADDON_LOADED")

@@ -76,11 +76,27 @@ function addon:HideAlert()
     alert:Hide()
 end
 
+function addon:ShowAlertFor(seconds)
+    self:ShowAlert()
+    if self.hideTimer then
+        self.hideTimer:Cancel()
+    end
+    self.hideTimer = C_Timer.NewTimer(seconds, function()
+        addon.hideTimer = nil
+        addon:HideAlert()
+    end)
+end
+
 function addon:TestSound()
     local path = self:GetSoundPath(self.db.soundName)
-    if path and path ~= "" then
-        PlaySoundFile(path, "Master")
+    if path and path ~= "" and PlaySoundFile(path, "Master") then
+        return
     end
+    if SOUNDKIT and SOUNDKIT.RAID_WARNING then
+        PlaySound(SOUNDKIT.RAID_WARNING, "Master")
+        return
+    end
+    print("|cffff5555Bears Low Arrows|r: could not play sound '" .. tostring(self.db.soundName) .. "' (" .. tostring(path) .. ")")
 end
 
 function addon:PlayAlertSound()
@@ -90,17 +106,14 @@ function addon:PlayAlertSound()
 end
 
 function addon:FlashAlert()
-    self:ShowAlert()
     local startTime = GetTime()
     local duration = self.db.duration
+    self:ShowAlertFor(duration)
     alert:SetScript("OnUpdate", function(frame)
         local elapsed = GetTime() - startTime
         if elapsed >= duration then
             frame:SetScript("OnUpdate", nil)
             frame:SetAlpha(1)
-            if not addon.cycleTimer then
-                addon:HideAlert()
-            end
             return
         end
         frame:SetAlpha(0.3 + 0.7 * math.abs(math.sin(elapsed * 4)))
