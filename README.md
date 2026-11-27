@@ -1,6 +1,6 @@
-# Bears Low Arrow
+# Bears Low Arrows
 
-[![WoW Version](https://img.shields.io/badge/WoW-12.1.5-darkgreen)](https://worldofwarcraft.blizzard.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub](https://img.shields.io/badge/GitHub-Source-blue?logo=github)](https://github.com/N6REJ/Bears-Low-Arrow)
+[![WoW Version](https://img.shields.io/badge/WoW-Forever%201.60.1-darkgreen)](https://worldofwarcraft.blizzard.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub](https://img.shields.io/badge/GitHub-Source-blue?logo=github)](https://github.com/N6REJ/Bears-Low-Arrows)
 
 Shows a large on-screen alert when a hunter is running low on ammo. Works for
 all hunter ammo types (arrows, bullets, and bolts).
@@ -30,7 +30,7 @@ Open the options window with `/arrows` or `/bla`.
 | Delay between alerts | 5-120 seconds | 30 |
 | Alert font size | 24-128 points, steps of 4 | 96 |
 | Font | Any font registered with LibSharedMedia-3.0, including fonts added by other addons. Use `<` and `>` to step through the list. | Friz Quadrata TT |
-| Play alert sound | Play a sound each time the alert appears. Default on. | on |
+| Play alert sound | Play a sound each time the alert appears. | on |
 | Sound | Click to open a scrollable list (mouse wheel or scrollbar) of built-in sounds (Raid Warning, Level Up, Ready Check, Map Ping, Alarm Clock) plus any sound registered with LibSharedMedia-3.0. Click a sound to select it. | Raid Warning |
 | Low ammo text | Color of the "LOW AMMO" text. Click the swatch to open the color wheel. | red |
 | Reload quiver text | Color of the "RELOAD YOUR QUIVER" text. Click the swatch to open the color wheel. | gold |
@@ -63,39 +63,51 @@ saved.
 
 ## Installation
 
-The repository root is the addon folder, but the folder must be named
-`Bears_Low_Arrow` to match `Bears_Low_Arrow.toc`. Junction it into the Forever
-AddOns directory:
+The addon folder must be named `Bears_Low_Arrows` to match
+`Bears_Low_Arrows.toc`. Place it in your Forever AddOns folder:
 
-```powershell
-New-Item -ItemType Junction `
-    -Path "C:\Gaming\World of Warcraft\_forever_\Interface\AddOns\Bears_Low_Arrow" `
-    -Target "E:\wow\Bears-Low-Arrow"
+```text
+<World of Warcraft>\_forever_\Interface\AddOns\Bears_Low_Arrows\
 ```
 
-Then run `/reload` in game.
+Either copy the addon files into that folder, or clone the repository directly
+into it. Run this from the AddOns folder:
+
+```powershell
+git clone https://github.com/N6REJ/Bears-Low-Arrows.git Bears_Low_Arrows
+```
+
+Then run `/reload` in game, or restart the client.
 
 ## File layout
 
 ```text
-Bears_Low_Arrow.toc        Addon manifest and load order
+Bears_Low_Arrows.toc       Addon manifest and load order
 core.lua                   Settings, ammo checks, and reminder timing
 alert.lua                  Large on-screen alert frame
+minimap.lua                Minimap button
 options.lua                Options window and slash commands (/arrows, /bla)
-.github/                   Release, changelog, labels, and stats workflows
-.packager/                 BigWigs packager scripts
-.pkgmeta                   BigWigs packager configuration
+Libs/                      Embedded libraries (LibStub, CallbackHandler-1.0,
+                           LibSharedMedia-3.0)
+.github/workflows/         Release, changelog, labels, auto-merge, and stats workflows
+.packager/                 BigWigs packager scripts and action
+.pkgmeta                   BigWigs packager configuration (externals and packaged name)
 README.md                  This file
 CHANGELOG.md               Version history
 AGENTS.md                  Project guidance for contributors and agents
+LICENSE                    MIT license
 ```
 
 ## Development
 
 - The addon name, TOC filename, folder name, and SavedVariables prefix
-  (`BearsLowArrowDB`) must stay consistent.
-- Add any new runtime file to `Bears_Low_Arrow.toc` in load order.
+  (`BearsLowArrowsDB`) must stay consistent. The packaged folder name is set by
+  `package-as` in `.pkgmeta`.
+- Add any new runtime file to `Bears_Low_Arrows.toc` in load order.
 - Keep the code Lua 5.1 compatible.
+- Use only APIs available in Forever. Do not use retail-only APIs.
+- Update `CHANGELOG.md` and this README when behavior changes.
+- Do not hard-code machine-specific paths in the addon or its docs.
 
 ## Release automation
 

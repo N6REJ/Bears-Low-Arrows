@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-local button = CreateFrame("Button", "BearsLowArrowMinimapButton", Minimap)
+local button = CreateFrame("Button", "BearsLowArrowsMinimapButton", Minimap)
 button:SetSize(32, 32)
 button:SetFrameStrata("MEDIUM")
 button:SetFrameLevel(8)
@@ -51,7 +51,7 @@ end)
 
 button:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_LEFT")
-    GameTooltip:AddLine("Bears Low Arrow")
+    GameTooltip:AddLine("Bears Low Arrows")
     GameTooltip:AddLine("Left-click: open options", 1, 1, 1)
     GameTooltip:AddLine("Drag: move button", 1, 1, 1)
     GameTooltip:Show()

@@ -1,6 +1,6 @@
 local addonName, addon = ...
 
-local alert = CreateFrame("Frame", "BearsLowArrowAlert", UIParent)
+local alert = CreateFrame("Frame", "BearsLowArrowsAlert", UIParent)
 alert:SetSize(1400, 220)
 alert:SetFrameStrata("FULLSCREEN_DIALOG")
 alert:SetMovable(true)

@@ -27,16 +27,16 @@ addon.builtinSounds = {
 local frame = CreateFrame("Frame")
 
 function addon:InitDB()
-    BearsLowArrowDB = BearsLowArrowDB or {}
+    BearsLowArrowsDB = BearsLowArrowsDB or {}
     for key, value in pairs(self.defaults) do
-        if BearsLowArrowDB[key] == nil then
-            BearsLowArrowDB[key] = value
+        if BearsLowArrowsDB[key] == nil then
+            BearsLowArrowsDB[key] = value
         end
     end
-    if BearsLowArrowDB.font:find("\\") then
-        BearsLowArrowDB.font = self.defaults.font
+    if BearsLowArrowsDB.font:find("\\") then
+        BearsLowArrowsDB.font = self.defaults.font
     end
-    self.db = BearsLowArrowDB
+    self.db = BearsLowArrowsDB
     self:ApplyAlertPosition()
 end
 

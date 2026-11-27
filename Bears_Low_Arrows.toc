@@ -1,9 +1,9 @@
 ## Interface: 16001
 ## Version: 2026.11.26
-## Title: Bears Low Arrow
+## Title: Bears Low Arrows
 ## Notes: Alerts hunters when they are running low on ammo.
 ## Author: Bear (N6REJ)
-## SavedVariables: BearsLowArrowDB
+## SavedVariables: BearsLowArrowsDB
 ## X-License: MIT License
 ## X-Curse-Project-ID: 1834026
 

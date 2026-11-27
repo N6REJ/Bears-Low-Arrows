@@ -39,7 +39,7 @@ jobs:
 
       - name: Generate filtered changelog
         run: |
-          project="Bears Low Arrow"
+          project="Bears Low Arrows"
           project_github_url="https://github.com/${GITHUB_REPOSITORY}"
           project_timestamp=$(git show --no-patch --format="%at" HEAD)
           changelog_date=$(TZ='' printf "%(%Y-%m-%d)T" "$project_timestamp")

@@ -1,7 +1,11 @@
-# Bears Low Arrow
+# Bears Low Arrows
 
 ## Unreleased
 
+- chore: renamed everything from "Bears Low Arrow" to "Bears Low Arrows". The SavedVariables table is now `BearsLowArrowsDB` (was `BearsLowArrowDB`), so settings saved under the old name are not carried over. Frame names, the minimap button, the options window, the slash command globals, the TOC title, and the release project name use the new name. Slash commands `/arrows` and `/bla` are unchanged.
+- chore: project source repository moved to https://github.com/N6REJ/Bears-Low-Arrows (README link updated)
+- chore: packaged addon folder is now `Bears_Low_Arrows` (`package-as` in `.pkgmeta`), matching the TOC filename
+- docs: README rewritten. Installation no longer uses machine-specific paths and uses a generic AddOns location. Adds a git clone option. File layout, development notes, and badge (Forever 1.60.1) updated.
 - feat: large on-screen "LOW AMMO" alert for hunters whose ammo count is below the set threshold. Covers all hunter ammo types (arrows, bullets, and bolts).
 - feat: options window (`/lowarrow`) with sliders for the threshold (200-2000 in steps of 200), alert duration, and delay between alerts
 - feat: alert font size slider (24-128 points)

@@ -229,7 +229,7 @@ end
 
 function addon:InitOptions()
     refreshing = true
-    panel = CreateFrame("Frame", "BearsLowArrowOptions", UIParent, BACKDROP)
+    panel = CreateFrame("Frame", "BearsLowArrowsOptions", UIParent, BACKDROP)
     panel:SetSize(440, 640)
     panel:SetPoint("CENTER")
     panel:SetFrameStrata("DIALOG")
@@ -249,7 +249,7 @@ function addon:InitOptions()
 
     local title = Text(panel, 18, PALETTE.gold, "CENTER")
     title:SetPoint("TOP", panel, "TOP", 0, -18)
-    title:SetText("Bears Low Arrow")
+    title:SetText("Bears Low Arrows")
 
     local closeButton = NewButton(panel, "X", 20, 20)
     closeButton:SetPoint("TOPRIGHT", panel, "TOPRIGHT", -8, -8)
@@ -302,7 +302,7 @@ function addon:InitOptions()
         addon.db.sound = checked
     end
 
-    soundList = CreateFrame("Frame", "BearsLowArrowSoundList", panel, BACKDROP)
+    soundList = CreateFrame("Frame", "BearsLowArrowsSoundList", panel, BACKDROP)
     soundList:SetSize(240, SOUND_VISIBLE_ROWS * SOUND_ROW_HEIGHT + 8)
     soundList:SetPoint("TOPLEFT", panel, "TOPLEFT", 24, -463)
     soundList:SetFrameStrata("DIALOG")
@@ -438,9 +438,9 @@ function addon:InitOptions()
 
     Refresh()
 
-    SLASH_BEARSLOWARROW1 = "/arrows"
-    SLASH_BEARSLOWARROW2 = "/bla"
-    SlashCmdList["BEARSLOWARROW"] = function(msg)
+    SLASH_BEARSLOWARROWS1 = "/arrows"
+    SLASH_BEARSLOWARROWS2 = "/bla"
+    SlashCmdList["BEARSLOWARROWS"] = function(msg)
         msg = strtrim(msg or ""):lower()
         if msg == "test" then
             addon:Test()
