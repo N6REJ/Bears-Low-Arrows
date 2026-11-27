@@ -1,0 +1,30 @@
+package-as: Bears_Low_Arrow
+
+manual-changelog:
+    filename: CHANGELOG.md
+    markup-type: markdown
+
+ignore:
+    - README.md
+    - .github
+    - .packager
+    - .release
+    - .gitignore
+    - .gitattributes
+    - .vscode/
+    - .idea
+    - AGENTS.md
+    - stats
+
+enable-nolib-creation: no
+
+externals:
+    Libs/LibStub:
+        url: https://repos.wowace.com/wow/ace3/trunk/LibStub/
+        tag: latest
+    Libs/CallbackHandler-1.0:
+        url: https://repos.wowace.com/wow/ace3/trunk/CallbackHandler-1.0
+        tag: latest
+    Libs/LibSharedMedia-3.0:
+        url: https://repos.wowace.com/wow/libsharedmedia-3-0/trunk/LibSharedMedia-3.0
+        tag: latest
