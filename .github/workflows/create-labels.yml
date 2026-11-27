@@ -8,6 +8,10 @@ on:
       - '.github/labels.yml'
       - '.github/workflows/create-labels.yml'
 
+permissions:
+  contents: read
+  issues: write
+
 jobs:
   labeler:
     runs-on: ubuntu-latest
@@ -19,3 +23,5 @@ jobs:
         name: Run Labeler
         if: success()
         uses: crazy-max/ghaction-github-labeler@v6.0.0
+        with:
+          skip-delete: true
