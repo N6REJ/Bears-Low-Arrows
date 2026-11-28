@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "2",
+  "owner": "N6REJ",
+  "repo": "Bears-Low-Arrows",
+  "visibility": "public",
+  "generatedAt": "2026-11-28T05:27:32.083Z",
+  "stats": {
+    "total": 15,
+    "day": 15,
+    "week": 15,
+    "month": 15,
+    "year": 15
+  },
+  "partial": {
+    "day": true,
+    "week": true,
+    "month": true,
+    "year": true
+  },
+  "periods": {
+    "day": {
+      "start": "2026-11-28",
+      "end": "2026-11-28",
+      "label": "2026-11-28"
+    },
+    "week": {
+      "start": "2026-11-23",
+      "end": "2026-11-29",
+      "label": "2026-W48"
+    },
+    "month": {
+      "start": "2026-11-01",
+      "end": "2026-11-30",
+      "label": "Nov 2026"
+    },
+    "year": {
+      "start": "2026-01-01",
+      "end": "2026-12-31",
+      "label": "2026"
+    }
+  },
+  "snapshots": {
+    "windowDays": 365,
+    "count": 1,
+    "firstDate": "2026-11-28",
+    "lastDate": "2026-11-28",
+    "series": {
+      "2026-11-28": 15
+    }
+  },
+  "profile": {
+    "defaultMode": "daily",
+    "hourlyEnabled": false
+  }
+}
